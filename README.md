@@ -4,7 +4,7 @@
 
 ### Introduction :
 
-This test suite is a dummy test set intended to help 42 students (and hopefully other people) to realize their own printf.
+This test suite is a dummy test set intended to help 42 students (and hopefully other people) to make their own printf.
 
 ### How to use :
 
@@ -13,7 +13,7 @@ This test suite is a dummy test set intended to help 42 students (and hopefully 
 2. Compile with `make`. It should compile your project and create a shared library (.so) in the YAPT directory.
    This library will be used by ctype to call your ft_printf function.
    
-3. Then just run the YAPT executable with one of the test files provided (or even your own test file) :
+3. Just run the YAPT executable with one of the test files provided (or even your own test file) :
 
     ./yapt test_files/dummy_cases.py
 
@@ -24,16 +24,16 @@ You can also find informations about YAPT features by running `./yapt -h`.
 The programm forks and runs each case and each function to compare in a subprocess. The output is captured and piped to parent process, just like the return value.
 These values are then interpreted and compared. If the subprocess exits with an error, then the exit status is interpreted.
 
-If every exit status was 0, leaks are tested after running every previous case directly in the parent process.
+If every exit status are 0, leaks are tested after running every previous case directly in the parent process.
 
 ### How are the test files formated :
 
 These Test files are python files (obviously).
 
-These files must be passed as parameters to the YAPT executable.
+These files must be used as parameters to the YAPT executable.
 
-These files must contain at least a `cases_generator` element. This element must be an iterable (generator, list...) factory. Its return would contain *test subsets*.
-Test subsets are dictionnaries formatted as bellow :
+These files must contain at least one `cases_generator` element. This element must be an iterable (generator, list...) factory. Its return would contain *test subsets*.
+Test subsets are dictionnaries, as formated bellow :
 
     {'name': name, 'cases': cases}
 
@@ -58,7 +58,7 @@ So the `cases_generator` factory return could look like this :
 
 #### What tests are provided?
 
-+. full_cases.py : This test file gathers content from many others full tests that can be passed as well to yapt.py. These tests are generated combinatorially and there are a *lot* of cases.
++. full_cases.py : This test file gathers content from many others full tests that can be passed as well to yapt.py. These tests are generated combinatorially and there are *lots* of cases.
 
 +. regular_tests.py : Some tests that should be enough to check most of your ft_printf feature (but probably not all). It also gathers other regular test sets.
 
@@ -76,13 +76,13 @@ There are two kinds of output you can get for a case :
 
        [case: #<case index>][<case>] -> [printf/ft_printf][<printf exit status or timeout>/<ft_printf exit status or timeout>] (different exit statuses.).
 
-Also note that if you doesn't enable the `-v` parameter, only the error outputs will be displayed. If you enable the `-q` parameter, only the subsets and global summaries are displayed.
+Also note that if you don't enable the `-v` parameter, only the error outputs will be displayed. If you enable the `-q` parameter, only the subsets and global summaries are displayed.
 
 ### NB :
 
 +. This test suite is meant to help students to realize the `ft_printf` project, not to permit them to make a "this-test-suite-fails-so-the-project-doesn't-work-so-here-is-your-0-bye-bye" correction :
 
-   This test suite includes undefined behaviours, check that a found error is a real error before considering the project as failed. (Also, discuss the project, or you're a disgrace as an examiner).
+   This test suite includes undefined behaviours, check that a found error is a real error before considering the project as failed. (Also, discuss the project, otherwise you are an awfull examiner).
 
 ### Also :
 
